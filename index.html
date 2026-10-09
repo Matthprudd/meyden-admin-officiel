@@ -147,4 +147,12 @@ toggle.addEventListener('click',()=>{render();const open=panel.classList.toggle(
 cta.addEventListener('click',()=>{if(isOS){if(typeof window.go==='function')window.go('soumission');else location.hash='soumission';panel.classList.remove('open');toggle.setAttribute('aria-expanded','false');}else{if(window.opener&&!window.opener.closed){try{window.opener.focus();return;}catch(e){}}location.assign(OS);}});
 window.addEventListener('storage',e=>{if(isOS&&e.key===key)render()});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{document.body.append(root);render()});else{document.body.append(root);render();}
+})();</script><script id="meyden-checkout-v25">(function(){
+const source='admin',os='https://meydenx-hedliner.vercel.app/';
+function selection(){
+const el=document.getElementById('leadService')||document.getElementById('quotePlan');const value=el?.value||'diagnostic';const opts={decouverte:['Rencontre découverte établissement','0 </html>],diagnostic:['Diagnostic établissement','250 </html>],incubation:['Accompagnement établissement','à partir de 900 </html>]};const a=opts[value]||[el?.selectedOptions?.[0]?.textContent||'Demande établissement','À préciser'];return {source,title:a[0],price:a[1]};
+}
+function checkout(){const choice=selection();location.assign(os+'?meyden_service='+encodeURIComponent(JSON.stringify(choice)));}
+function ready(){const panel=document.querySelector('#meyden-floating-cart .mf-panel');if(!panel)return;const b=document.createElement('button');b.type='button';b.textContent='Ajouter mon forfait au panier central';b.className='mf-cta';b.style.background='#24715b';b.addEventListener('click',checkout);panel.appendChild(b);}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
 })();</script></body></html>
